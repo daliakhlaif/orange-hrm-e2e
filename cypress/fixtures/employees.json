@@ -1,0 +1,20 @@
+{
+    "newEmployee": {
+        "id": "l01",
+        "firstName": "Lina",
+        "middleName": "Ali",
+        "photo": "cypress/fixtures/images/profile.jpg",
+        "lastName": "Sami",
+        "username": "lina.sami",
+        "password": "linaPassword123"
+    },
+    "newEmployeeInvalid": {
+        "id": "l02",
+        "firstName": "Lina",
+        "middleName": "Ali",
+        "photo": "cypress/fixtures/files/invalid-file.exe",
+        "lastName": "Sami",
+        "username": "lina.sami",
+        "password": "123"
+    }
+}
