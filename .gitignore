@@ -6,6 +6,3 @@ allure-report/
 cypress/screenshots/
 cypress/videos/
 cypress/reports/
-coverage/
-.env
-.DS_Store
