@@ -3,3 +3,8 @@ dist/
 *.log
 allure-results/
 allure-report/
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+coverage/
+.env
