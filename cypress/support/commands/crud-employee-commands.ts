@@ -6,7 +6,7 @@ import { IAssignJobResponse } from "../api/response/assign-job";
 import { IDeleteEmployeeResponse } from "../api/response/delete-employee";
 import { HeaderValues, HttpMethod } from "../enum/http";
 import { Employee } from "../interfaces/employee-interface";
-import AddEmployeePage from "../pages/add-employee-page";
+import AddEmployeePage from "../pages/employees/add-employee-page";
 
 declare global {
   namespace Cypress {
@@ -58,7 +58,7 @@ Cypress.Commands.add(
       }
     }
 
-    AddEmployeePage.save();
+    return AddEmployeePage.save();
   }
 );
 

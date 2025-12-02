@@ -1,4 +1,4 @@
-import { LOGIN_PAGE_LOCATORS } from '../constants/locators-constants';
+import { LOGIN_PAGE_LOCATORS } from "./login-page-locators";
 
 class LoginPage {
 
@@ -33,7 +33,7 @@ class LoginPage {
         cy.get(LOGIN_PAGE_LOCATORS.password).should('have.attr', 'type', 'password')
     }
 
-    assertRquiredAt(index: number, text: string) {
+    assertRequiredAt(index: number, text: string) {
         cy.get(LOGIN_PAGE_LOCATORS.requiredMsg).eq(index).should('contain', text)
     }
 

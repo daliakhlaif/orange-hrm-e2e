@@ -1,7 +1,7 @@
-import { ADD_VACANCY_PAGE_LOCATORS } from "../constants/locators-constants";
-import { MESSAGES } from "../constants/messages-constants";
-import { PAGE_URLS } from "../enum/modules-enum";
-import WebElementHandler from "../handlers/web-element-handler";
+import { MESSAGES } from "../../constants/messages-constants";
+import { PAGE_URLS } from "../../enum/modules-enum";
+import WebElementHandler from "../../handlers/web-element-handler";
+import { ADD_VACANCY_PAGE_LOCATORS } from "./vacancies-locators";
 
 const ADD_VACANCY_TEXT = {
   title: "Add Vacancy",

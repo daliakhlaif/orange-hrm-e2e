@@ -1,6 +1,6 @@
-import { ADD_USER_PAGE_LOCATORS, USER_PAGE_LOCATORS } from "../constants/locators-constants";
-import { PAGE_URLS } from "../enum/modules-enum";
-import WebTableHandler from "../handlers/web-table-handler";
+import { PAGE_URLS } from "../../enum/modules-enum";
+import WebTableHandler from "../../handlers/web-table-handler";
+import { ADD_USER_PAGE_LOCATORS, USER_PAGE_LOCATORS } from "./users-locators";
 
 const ADD_USER_TEXT = {
     title: "Add User"

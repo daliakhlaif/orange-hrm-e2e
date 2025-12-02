@@ -10,7 +10,7 @@ import { EmployeeHelper } from "../helpers/employee-helper";
 import { JobHelper } from "../helpers/job-helper";
 import { RecruitmentHelper } from "../helpers/recruitment-helper";
 import { Vacancy } from "../interfaces/vacancy-interface";
-import AddVacancyPage from "../pages/add-vacancy-page";
+import AddVacancyPage from "../pages/recruitment/add-vacancy-page";
 
 
 export interface PreparedVacancyData {
@@ -70,26 +70,34 @@ export function cleanupEntities(
     vacancyId: number,
     jobId: number,
 ): Cypress.Chainable<any> {
+    let chain: Cypress.Chainable<any> = cy.then(() => { });
+
     if (vacancyId) {
         const req: IDeleteVacancyRequest = { ids: [vacancyId] };
-        return RecruitmentHelper.deleteVacancy(req).then((resp) => {
-            expect([StatusCode.OK, StatusCode.NO_CONTENT]).to.include(resp.status);
-        });
+        chain = chain.then(() =>
+            RecruitmentHelper.deleteVacancy(req).then((resp) => {
+                expect([StatusCode.OK, StatusCode.NO_CONTENT]).to.include(resp.status);
+            })
+        );
     }
 
     if (jobId) {
         const jobReq: IDeleteJobTitleRequest = { ids: [jobId] };
-        return JobHelper.deleteJob(jobReq).then((jobResp) => {
-            expect([StatusCode.OK, StatusCode.NO_CONTENT]).to.include(jobResp.status)
-        })
+        chain = chain.then(() =>
+            JobHelper.deleteJob(jobReq).then((resp) => {
+                expect([StatusCode.OK, StatusCode.NO_CONTENT]).to.include(resp.status);
+            })
+        );
     }
 
     if (empNumber) {
         const empReq: IDeleteEmployeeRequest = { ids: [empNumber] };
-        return EmployeeHelper.deleteEmployee(empReq).then((resp) => {
-            expect([StatusCode.OK, StatusCode.NO_CONTENT]).to.include(resp.status);
-        });
+        chain = chain.then(() =>
+            EmployeeHelper.deleteEmployee(empReq).then((resp) => {
+                expect([StatusCode.OK, StatusCode.NO_CONTENT]).to.include(resp.status);
+            })
+        );
     }
 
-    return cy.wrap(null);
+    return chain;
 }

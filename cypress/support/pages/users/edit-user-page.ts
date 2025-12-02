@@ -1,6 +1,6 @@
-import { EDIT_USER_PAGE_LOCATORS, USER_PAGE_LOCATORS } from "../constants/locators-constants";
-import webElementHandler from "../handlers/web-element-handler";
-import WebTableHandler from "../handlers/web-table-handler";
+import webElementHandler from "../../handlers/web-element-handler";
+import WebTableHandler from "../../handlers/web-table-handler";
+import { EDIT_USER_PAGE_LOCATORS, USER_PAGE_LOCATORS } from "./users-locators";
 
 class EditUserPage {
 

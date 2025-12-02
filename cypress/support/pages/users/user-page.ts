@@ -1,7 +1,7 @@
-import { USER_PAGE_LOCATORS } from "../constants/locators-constants";
-import { PAGE_URLS } from "../enum/modules-enum";
-import WebElementHandler from "../handlers/web-element-handler";
-import WebTableHandler from "../handlers/web-table-handler";
+import { PAGE_URLS } from "../../enum/modules-enum";
+import WebElementHandler from "../../handlers/web-element-handler";
+import WebTableHandler from "../../handlers/web-table-handler";
+import { USER_PAGE_LOCATORS } from "./users-locators";
 
 const USER_MANAGEMENT_TEXT = {
     title: "User Management"

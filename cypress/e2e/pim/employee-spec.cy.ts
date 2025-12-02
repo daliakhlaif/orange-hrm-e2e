@@ -1,13 +1,12 @@
-import { ADD_EMPLOYEE_PAGE_LOCATORS } from "../../support/constants/locators-constants";
 import { MESSAGES } from "../../support/constants/messages-constants";
 import { Employee } from "../../support/interfaces/employee-interface";
-import AddEmployeePage from "../../support/pages/add-employee-page";
-import DashboardPage from "../../support/pages/dashboard-page";
-import LoginPage from "../../support/pages/login-page";
+import AddEmployeePage from "../../support/pages/employees/add-employee-page";
+import DashboardPage from "../../support/pages/dashboard/dashboard-page";
+import LoginPage from "../../support/pages/login/login-page";
 import WebElementHandler from "../../support/handlers/web-element-handler";
-import webElementHandler from "../../support/handlers/web-element-handler";
 import { EmployeeInfo, UserCredentials } from "../../support/enum/system-info-enums";
 import { captureEmployeeNumber, cleanupEmployee } from "../../support/utils/employee-utils";
+import { ADD_EMPLOYEE_PAGE_LOCATORS } from "../../support/pages/employees/employees-locators";
 
 describe('PIM - Employee Test Cases', () => {
   let createdEmployeeNum: number | null = null;
@@ -25,7 +24,7 @@ describe('PIM - Employee Test Cases', () => {
     createdEmployeeNum = null;
   });
 
-  it("Should successfully add a new employee without login details", () => {
+  it("TC15: Should successfully add a new employee without login details", () => {
     AddEmployeePage.visit();
     AddEmployeePage.isLoaded();
 
@@ -43,7 +42,7 @@ describe('PIM - Employee Test Cases', () => {
     });
   });
 
-  it("TC15: Should successfully add a new employee with photo & login details", () => {
+  it("TC16: Should successfully add a new employee with photo & login details", () => {
     const employee: Employee = {
       id: EmployeeInfo.ID,
       firstName: EmployeeInfo.FIRST_NAME,
@@ -65,11 +64,11 @@ describe('PIM - Employee Test Cases', () => {
     AddEmployeePage.assertEmployeeInList(EmployeeInfo.ID, EmployeeInfo.FIRST_NAME, EmployeeInfo.LAST_NAME)
   });
 
-  it("TC16: Should show error messages for empty first name, wrong file type, and short password", () => {
+  it("TC17: Should show error messages for empty first name, wrong file type, and short password", () => {
     AddEmployeePage.visit();
     AddEmployeePage.isLoaded();
 
-    webElementHandler.clearInput(ADD_EMPLOYEE_PAGE_LOCATORS.firstName)
+    WebElementHandler.clearInput(ADD_EMPLOYEE_PAGE_LOCATORS.firstName)
     AddEmployeePage.typeMiddleName(EmployeeInfo.MIDDLE_NAME);
     AddEmployeePage.typeLastName(EmployeeInfo.LAST_NAME);
     AddEmployeePage.save()

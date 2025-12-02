@@ -1,6 +1,6 @@
-import { MY_LEAVE_PAGE_LOCATORS } from "../constants/locators-constants"
-import { PAGE_URLS } from "../enum/modules-enum"
-import webElementHandler from "../handlers/web-element-handler"
+import { PAGE_URLS } from "../../enum/modules-enum"
+import webElementHandler from "../../handlers/web-element-handler"
+import { MY_LEAVE_PAGE_LOCATORS } from "./leave-locators"
 
 const MY_LEAVE_TEXT = {
   title: "My Leave",

@@ -2,7 +2,7 @@ import { IDeleteVacancyRequest } from "../api/payload/delete-vacancy";
 import { IDeleteVacancyResponse } from "../api/response/delete-vacancy";
 import { HttpMethod } from "../enum/http";
 import { Vacancy } from "../interfaces/vacancy-interface";
-import AddVacancyPage from "../pages/add-vacancy-page";
+import AddVacancyPage from "../pages/recruitment/add-vacancy-page";
 
 declare global {
   namespace Cypress {

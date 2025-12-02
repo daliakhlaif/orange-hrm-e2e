@@ -5,7 +5,7 @@ import { StatusCode } from "../enum/http";
 import { EmployeeInfo, UserCredentials, UserInfo } from "../enum/system-info-enums";
 import { EmployeeHelper } from "../helpers/employee-helper";
 import { UserHelper } from "../helpers/user-helper";
-import LoginPage from "../pages/login-page";
+import LoginPage from "../pages/login/login-page";
 import { Methods } from "../utils/generic-methods";
 
 export class BuzzUtils {
@@ -45,26 +45,34 @@ export class BuzzUtils {
         });
     }
 
-    static cleanup(): Cypress.Chainable {
+    static cleanup(): Cypress.Chainable<any> {
         Methods.logout();
         LoginPage.isLoaded();
         cy.login(UserCredentials.USERNAME, UserCredentials.PASSWORD);
 
+        let chain: Cypress.Chainable<any> = cy.then(() => { });
+
         const userId = Cypress.env("createdUserId");
+
         if (userId) {
             const req: IDeleteUserRequest = { ids: [userId] };
-            UserHelper.deleteUser(req).then((resp) => {
-                expect(resp.status).to.eq(StatusCode.OK);
-                expect(resp.body.data).to.include(String(userId));
-            });
+            chain = chain.then(() =>
+                UserHelper.deleteUser(req).then((resp) => {
+                    expect(resp.status).to.eq(StatusCode.OK);
+                    expect(resp.body.data).to.include(String(userId));
+                })
+            );
         }
 
         if (BuzzUtils.createdEmpNumber) {
             const req: IDeleteEmployeeRequest = { ids: [BuzzUtils.createdEmpNumber] };
-            EmployeeHelper.deleteEmployee(req).then((resp) => {
-                expect([StatusCode.OK, StatusCode.NO_CONTENT]).to.include(resp.status);
-            });
+            chain = chain.then(() =>
+                EmployeeHelper.deleteEmployee(req).then((resp) => {
+                    expect([StatusCode.OK, StatusCode.NO_CONTENT]).to.include(resp.status);
+                })
+            );
         }
-        return cy.wrap(null);
+
+        return chain;
     }
 }

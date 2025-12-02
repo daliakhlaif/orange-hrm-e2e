@@ -1,9 +1,9 @@
 import { UserCredentials, UserInfo, LeaveData, EntitlementData } from "../../support/enum/system-info-enums";
-import DashboardPage from "../../support/pages/dashboard-page";
-import LoginPage from "../../support/pages/login-page";
-import ApplyLeavePage from "../../support/pages/apply-leave-page";
-import LeaveListPage from "../../support/pages/leave-list-page";
-import MyLeavePage from "../../support/pages/my-leave-page";
+import DashboardPage from "../../support/pages/dashboard/dashboard-page";
+import LoginPage from "../../support/pages/login/login-page";
+import ApplyLeavePage from "../../support/pages/leave/apply-leave-page";
+import LeaveListPage from "../../support/pages/leave/leave-list-page";
+import MyLeavePage from "../../support/pages/leave/my-leave-page";
 import { Methods } from "../../support/utils/generic-methods";
 import { LeaveUtils } from "../../support/utils/leave-utils";
 
@@ -26,7 +26,7 @@ describe("Leave - Test Cases", () => {
     LeaveUtils.cleanup();
   });
 
-  it("TC17: Should allow employee to apply for leave, admin approves it, and employee checks status", () => {
+  it("TC18: Should allow employee to apply for leave, admin approves it, and employee checks status", () => {
     cy.login(LeaveUtils.createdUser.userName, LeaveUtils.createdUser.password || UserInfo.PASSWORD);
     ApplyLeavePage.visit();
     ApplyLeavePage.isLoaded();

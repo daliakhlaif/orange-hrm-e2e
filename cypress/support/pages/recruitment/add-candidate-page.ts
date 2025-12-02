@@ -1,7 +1,7 @@
-import { ADD_CANDIDATE_PAGE } from "../constants/locators-constants";
-import { MESSAGES } from "../constants/messages-constants";
-import { PAGE_URLS } from "../enum/modules-enum";
-import webElementHandler from "../handlers/web-element-handler";
+import { MESSAGES } from "../../constants/messages-constants";
+import { PAGE_URLS } from "../../enum/modules-enum";
+import webElementHandler from "../../handlers/web-element-handler";
+import { ADD_CANDIDATE_PAGE } from "./vacancies-locators";
 
 const ADD_CANDIDATE_TEXT = {
     title: "Add Candidate"

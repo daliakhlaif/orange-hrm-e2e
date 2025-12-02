@@ -1,16 +1,16 @@
-import LoginPage from "../../support/pages/login-page";
-import DashboardPage from "../../support/pages/dashboard-page";
-import AdminPage from "../../support/pages/admin-page";
+import LoginPage from "../../support/pages/login/login-page";
+import DashboardPage from "../../support/pages/dashboard/dashboard-page";
+import AdminPage from "../../support/pages/admin/admin-page";
 import { APP_MODULES } from "../../support/enum/modules-enum";
 import WebElementHandler from "../../support/handlers/web-element-handler";
 import { MESSAGES } from "../../support/constants/messages-constants";
-import { ADD_USER_PAGE_LOCATORS, USER_PAGE_LOCATORS } from "../../support/constants/locators-constants";
 import WebTableHandler from "../../support/handlers/web-table-handler";
-import EditUserPage from "../../support/pages/edit-user-page";
+import EditUserPage from "../../support/pages/users/edit-user-page";
 import { Methods } from "../../support/utils/generic-methods";
 import { Roles, Status, UserCredentials, UserInfo } from "../../support/enum/system-info-enums";
-import UserManagementPage from "../../support/pages/user-page";
+import UserManagementPage from "../../support/pages/users/user-page";
 import { prepareUser, cleanupUser } from "../../support/utils/user-utils";
+import { USER_PAGE_LOCATORS, ADD_USER_PAGE_LOCATORS } from "../../support/pages/users/users-locators";
 
 describe("Admin - User Management CRUD Test Cases", () => {
   let createdEmpNumber: number;
@@ -25,7 +25,7 @@ describe("Admin - User Management CRUD Test Cases", () => {
     DashboardPage.isLoaded();
     AdminPage.openFromMenu(APP_MODULES.ADMIN);
 
-    prepareUser().then((data) => {
+    return prepareUser().then((data) => {
       createdEmpNumber = data.createdEmpNumber;
       createdEmployeeName = data.createdEmployeeName;
       createdUsername = data.createdUsername;

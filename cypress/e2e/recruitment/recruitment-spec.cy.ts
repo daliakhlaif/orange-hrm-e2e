@@ -1,10 +1,10 @@
-import LoginPage from "../../support/pages/login-page";
-import DashboardPage from "../../support/pages/dashboard-page";
+import LoginPage from "../../support/pages/login/login-page";
+import DashboardPage from "../../support/pages/dashboard/dashboard-page";
 import { UserCredentials } from "../../support/enum/system-info-enums";
 import { cleanupEntities, PreparedVacancyData, prepareVacancy } from "../../support/utils/recruitment-utils";
-import AddCandidatePage from "../../support/pages/add-candidate-page";
+import AddCandidatePage from "../../support/pages/recruitment/add-candidate-page";
 import { CANDIDATE_DETAILS } from "../../support/constants/test-data-constants";
-import CandidatesPage from "../../support/pages/candidates-page";
+import CandidatesPage from "../../support/pages/recruitment/candidates-page";
 
 
 describe('Recruitment - Candidates Page Test Cases', () => {
@@ -16,14 +16,14 @@ describe('Recruitment - Candidates Page Test Cases', () => {
         cy.login(UserCredentials.USERNAME, UserCredentials.PASSWORD);
         DashboardPage.isLoaded();
 
-        prepareVacancy().then((data) => {
+        return prepareVacancy().then((data) => {
             preparedData = data;
         });
     });
 
     afterEach(() => {
         if (preparedData) {
-            cleanupEntities(
+            return cleanupEntities(
                 preparedData.employeeData.empNumber,
                 preparedData.vacancyData.id,
                 preparedData.jobData.id
@@ -31,7 +31,7 @@ describe('Recruitment - Candidates Page Test Cases', () => {
         }
     });
 
-    it('TC19: Should add, search, shortlist and interview a candidate', () => {
+    it('TC20: Should add, search, shortlist and interview a candidate', () => {
         const [first, middle, last] = CANDIDATE_DETAILS.name.split(" ");
 
         AddCandidatePage.visit();

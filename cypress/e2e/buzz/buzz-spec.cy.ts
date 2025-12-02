@@ -1,17 +1,18 @@
 import { APP_MODULES } from "../../support/enum/modules-enum";
 import { UserCredentials } from "../../support/enum/system-info-enums";
-import BuzzPage from "../../support/pages/buzz-page";
-import DashboardPage from "../../support/pages/dashboard-page";
-import LoginPage from "../../support/pages/login-page";
-import AdminPage from "../../support/pages/admin-page";
+import BuzzPage from "../../support/pages/buzz/buzz-page";
+import DashboardPage from "../../support/pages/dashboard/dashboard-page";
+import LoginPage from "../../support/pages/login/login-page";
+import AdminPage from "../../support/pages/admin/admin-page";
 import { Methods } from "../../support/utils/generic-methods";
 import { BuzzUtils } from "../../support/utils/buzz-utils";
+import { PostInfoFixture } from "../../support/interfaces/postInfo-fixture-interface";
 
 describe("Buzz - Test Cases", () => {
     let postMessage: string;
 
     beforeEach(() => {
-        cy.fixture("postInfo.json").then((data) => {
+        cy.fixture<PostInfoFixture>("postInfo.json").then((data) => {
             postMessage = data.baseMessage + Methods.generateRandomString(5);
         });
 
@@ -21,14 +22,14 @@ describe("Buzz - Test Cases", () => {
         DashboardPage.isLoaded();
         AdminPage.openFromMenu(APP_MODULES.ADMIN);
 
-        BuzzUtils.createEmployeeAndUser();
+        return BuzzUtils.createEmployeeAndUser();
     });
 
     afterEach(() => {
-        BuzzUtils.cleanup();
+        return BuzzUtils.cleanup();
     });
 
-    it("TC18: Should allow user to add a new post", () => {
+    it("TC19: Should allow user to add a new post", () => {
         BuzzPage.visit();
         BuzzPage.isLoaded();
         BuzzPage.typePost(postMessage);

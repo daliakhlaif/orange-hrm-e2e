@@ -1,8 +1,8 @@
 import { Entitlement } from "../interfaces/entitlement-interface";
 import { LeaveRequest } from "../interfaces/leave-interface";
-import AddEntitlementPage from "../pages/add-entitlement-page";
-import ApplyLeavePage from "../pages/apply-leave-page";
-import LeaveListPage from "../pages/leave-list-page";
+import AddEntitlementPage from "../pages/leave/add-entitlement-page";
+import ApplyLeavePage from "../pages/leave/apply-leave-page";
+import LeaveListPage from "../pages/leave/leave-list-page";
 
 declare global {
   namespace Cypress {

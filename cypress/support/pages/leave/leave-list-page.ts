@@ -1,7 +1,7 @@
-import { LEAVE_LIST_PAGE } from "../constants/locators-constants"
-import { MESSAGES } from "../constants/messages-constants"
-import { PAGE_URLS } from "../enum/modules-enum"
-import webElementHandler from "../handlers/web-element-handler"
+import { MESSAGES } from "../../constants/messages-constants"
+import { PAGE_URLS } from "../../enum/modules-enum"
+import webElementHandler from "../../handlers/web-element-handler"
+import { LEAVE_LIST_PAGE } from "./leave-locators"
 
 const LEAVE_LIST_TEXT = {
     title: "Leave List"

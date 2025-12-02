@@ -1,7 +1,7 @@
-import { BUZZ_PAGE_LOCATORS } from "../constants/locators-constants";
-import { MESSAGES } from "../constants/messages-constants";
-import { APP_MODULES } from "../enum/modules-enum";
-import WebElementHandler from "../handlers/web-element-handler";
+import { MESSAGES } from "../../constants/messages-constants";
+import { APP_MODULES } from "../../enum/modules-enum";
+import WebElementHandler from "../../handlers/web-element-handler";
+import { BUZZ_PAGE_LOCATORS } from "./buzz-page-locators";
 
 
 class BuzzPage {

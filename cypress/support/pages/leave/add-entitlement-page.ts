@@ -1,7 +1,8 @@
-import { ADD_ENTITLEMENT_PAGE, CONFIRM_DIALOG_LOCATORS } from "../constants/locators-constants"
-import { MESSAGES } from "../constants/messages-constants"
-import { PAGE_URLS } from "../enum/modules-enum"
-import webElementHandler from "../handlers/web-element-handler"
+import { CONFIRM_DIALOG_LOCATORS } from "../../constants/generic-locators-constants"
+import { MESSAGES } from "../../constants/messages-constants"
+import { PAGE_URLS } from "../../enum/modules-enum"
+import webElementHandler from "../../handlers/web-element-handler"
+import { ADD_ENTITLEMENT_PAGE } from "./leave-locators"
 
 const ADD_ENTITLEMENT_TEXT = {
     title: "Add Leave Entitlement",

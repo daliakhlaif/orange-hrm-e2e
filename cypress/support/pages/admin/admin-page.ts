@@ -1,5 +1,5 @@
-import { ADMIN_PAGE_LOCATORS } from "../constants/locators-constants"
-import { APP_MODULES, MODULE_URL_FREG } from "../enum/modules-enum"
+import { APP_MODULES, MODULE_URL_FREG } from "../../enum/modules-enum"
+import { ADMIN_PAGE_LOCATORS } from "./admin-page-locators"
 
 class AdminPage {
 

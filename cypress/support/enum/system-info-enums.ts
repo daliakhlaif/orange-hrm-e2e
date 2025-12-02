@@ -40,8 +40,8 @@ export enum EntitlementData {
 
 export enum LeaveData {
   LEAVE_TYPE = 'Personal',
-  FROM_DATE = '2025-05-10',
-  TO_DATE = '2025-06-10',
+  FROM_DATE = '2025-12-12',
+  TO_DATE = '2025-13-12',
 }
 
 export enum UserInfo {

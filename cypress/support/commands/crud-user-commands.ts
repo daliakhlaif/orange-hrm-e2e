@@ -3,8 +3,8 @@ import { IAddUserRequest } from "../api/payload/add-user"
 import { IAddUserResponse } from "../api/response/add-user"
 import { IDeleteUserRequest } from "../api/payload/delete-user";
 import { IDeleteUserResponse } from "../api/response/delete-user";
-import LoginPage from "../pages/login-page";
-import AddUserPage from "../pages/add-user-page";
+import LoginPage from "../pages/login/login-page";
+import AddUserPage from "../pages/users/add-user-page";
 import { User } from "../interfaces/user-interface";
 
 declare global {

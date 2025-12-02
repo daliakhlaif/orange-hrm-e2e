@@ -1,4 +1,4 @@
-import { MODULE_URL_FREG } from "../enum/modules-enum"
+import { MODULE_URL_FREG } from "../../enum/modules-enum"
 
 class DashboardPage {
     isLoaded() {

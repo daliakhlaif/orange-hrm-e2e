@@ -1,7 +1,7 @@
-import { APPLY_LEAVE_PAGE_LOCATORS } from "../constants/locators-constants"
-import { MESSAGES } from "../constants/messages-constants"
-import { PAGE_URLS } from "../enum/modules-enum"
-import webElementHandler from "../handlers/web-element-handler"
+import { MESSAGES } from "../../constants/messages-constants"
+import { PAGE_URLS } from "../../enum/modules-enum"
+import webElementHandler from "../../handlers/web-element-handler"
+import { APPLY_LEAVE_PAGE_LOCATORS } from "./leave-locators"
 
 const APPLY_LEAVE_TEXT = {
   title: "Apply Leave",

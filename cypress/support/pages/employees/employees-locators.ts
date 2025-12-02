@@ -1,0 +1,30 @@
+export const ADD_EMPLOYEE_PAGE_LOCATORS = {
+  headerAddEmployee: 'h6',
+  firstName: 'input[name="firstName"]',
+  middleName: 'input[name="middleName"]',
+  lastName: 'input[name="lastName"]',
+  saveButton: 'button[type="submit"]',
+  toastMsg: '.oxd-toast',
+  photoInput: 'input[type="file"]',
+  createLoginDetailsSwitch: '.oxd-switch-input',
+  UsernameInput: ':nth-child(4) > .oxd-grid-2 > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input',
+  passwordInput: '.user-password-cell > .oxd-input-group > :nth-child(2) > .oxd-input',
+  confirmPasswordInput: '.oxd-grid-2 > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input',
+  employeeImg: '.employee-image',
+  employeeIdInput: '.oxd-input-group input.oxd-input',
+  firstNameError: '.oxd-input-field-error-message',
+  fileError: 'span.oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message',
+  passwordError: '.oxd-input-field-error-message',
+}
+
+export const EMPLOYEE_LIST_PAGE_LOCATORS = {
+  employeeList: '.oxd-topbar-body-nav-tab-item',
+  employeeIdInput: ':nth-child(2) > .oxd-input',
+  searchBtn: '.oxd-form-actions > .oxd-button--secondary',
+  usersTable: '.oxd-table-body',
+  tableRow: '.oxd-table-card .oxd-table-row',
+  jobTitleDropdown: '.oxd-select-wrapper:eq(2)',
+  jobTitleOption: '.oxd-select-option',
+  subUnitDropdown: '.oxd-select-wrapper:eq(3)',
+  subUnitOption: '.oxd-select-option',
+};

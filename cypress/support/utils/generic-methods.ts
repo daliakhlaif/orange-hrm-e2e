@@ -1,6 +1,6 @@
-import { CONFIRM_DELETE_DIALOG_LOCATORS, LOGOUT_PAGE_LOCATORS } from "../constants/locators-constants";
+import { CONFIRM_DELETE_DIALOG_LOCATORS, LOGOUT_PAGE_LOCATORS } from "../constants/generic-locators-constants";
 import WebElementHandler from "../handlers/web-element-handler";
-import LoginPage from "../pages/login-page";
+import LoginPage from "../pages/login/login-page";
 
 export class Methods {
 

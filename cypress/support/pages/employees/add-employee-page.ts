@@ -1,9 +1,9 @@
-import { ADD_EMPLOYEE_PAGE_LOCATORS, EMPLOYEE_LIST_PAGE_LOCATORS } from "../constants/locators-constants";
-import { MESSAGES } from "../constants/messages-constants";
-import { APP_MODULES, PAGE_URLS } from "../enum/modules-enum";
-import WebElementHandler from "../handlers/web-element-handler";
-import WebTableHandler from "../handlers/web-table-handler";
-import adminPage from "./admin-page";
+import { MESSAGES } from "../../constants/messages-constants";
+import { APP_MODULES, PAGE_URLS } from "../../enum/modules-enum";
+import WebElementHandler from "../../handlers/web-element-handler";
+import WebTableHandler from "../../handlers/web-table-handler";
+import adminPage from "../admin/admin-page";
+import { ADD_EMPLOYEE_PAGE_LOCATORS, EMPLOYEE_LIST_PAGE_LOCATORS } from "./employees-locators";
 
 const ADD_EMPLOYEE_TEXT = {
   title: "Add Employee"
@@ -58,7 +58,7 @@ class AddEmployeePage {
     WebElementHandler.type(ADD_EMPLOYEE_PAGE_LOCATORS.confirmPasswordInput, confirmPassword);
   }
   save() {
-    WebElementHandler.click(ADD_EMPLOYEE_PAGE_LOCATORS.saveButton);
+    return WebElementHandler.click(ADD_EMPLOYEE_PAGE_LOCATORS.saveButton);
   }
 
   assertEmployeeCreated() {
