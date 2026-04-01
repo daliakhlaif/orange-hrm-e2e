@@ -1,0 +1,17 @@
+{
+     "valid": {
+          "username": "Admin",
+          "password": "admin123"
+     },
+     "invalid": {
+          "username": "WrongUser",
+          "password": "wrongPass"
+     },
+     "newUser": {
+          "employeeName": "Lina Ali Sami",
+          "username": "john.doe.auto",
+          "password": "Test@12345",
+          "userRole": "Admin",
+          "status": "Enabled"
+     }
+}

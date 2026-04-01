@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": ["cypress", "node"]
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "types": ["cypress", "node", "cypress-file-upload"]
   },
-  "include": ["cypress/**/*.ts", "cypress.config.ts"]
+  "include": ["**/*.ts"]
 }
