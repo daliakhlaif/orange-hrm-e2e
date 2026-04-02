@@ -14,5 +14,7 @@ export default defineConfig({
   env: {
     allure: true,
     allureResults: "allure-results"
-  }
+  },
+
+  projectId: "jtxauc",
 });
